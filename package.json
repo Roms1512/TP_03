@@ -1,0 +1,12 @@
+{
+  "name": "tp_03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/main.scss:css/index.css"
+  },
+  "author": "Romain Lavaur",
+  "license": "ISC"
+}
