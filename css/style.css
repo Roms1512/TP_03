@@ -1,0 +1,129 @@
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: #1d1d1d;
+  color: #FFF;
+}
+
+img {
+  object-fit: cover;
+}
+
+.logo {
+  color: #FFF;
+}
+.logo span {
+  color: #ffc400;
+}
+
+.navigation {
+  display: flex;
+}
+.navigation .menu-nav ul {
+  display: flex;
+  list-style-type: none;
+}
+.navigation .menu-nav ul li {
+  margin-left: 40px;
+}
+.navigation .menu-nav ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  width: 100%;
+  height: 760px;
+  display: flex;
+  background: linear-gradient(rgba(0, 0, 0, 0.26), black);
+}
+header img {
+  z-index: -9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 760px;
+}
+header .contenu-logo {
+  border: 1px solid black;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 20%;
+  align-items: center;
+}
+header .contenu-logo .logo__header {
+  display: flex;
+  width: 100%;
+  height: 396px;
+  background: #1d1d1d;
+}
+header .contenu-logo .reseaux {
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+header .contenu-logo .reseaux i {
+  color: #FFF;
+  margin-top: 30px;
+}
+header .navigation__header {
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: 100%;
+  justify-content: space-between;
+}
+header .navigation__header .number-header {
+  color: #FFF;
+  width: 20%;
+  text-align: center;
+}
+header .navigation__header .menu-nav__header {
+  margin-right: 20%;
+  width: 40%;
+}
+header .titre {
+  border: 1px solid black;
+  color: #FFF;
+  position: absolute;
+  margin-right: 20%;
+  left: 0;
+  width: 60%;
+  height: 100%;
+}
+header .titre h1 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation-principale {
+  width: 100%;
+  height: 1760px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.navigation-principale .projet {
+  position: relative;
+  width: 25%;
+  height: 880px;
+  background: rgba(0, 0, 0, 0.486);
+}
+.navigation-principale .projet img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 880px;
+}
+.navigation-principale .projet h2, .navigation-principale .projet i, .navigation-principale .projet p {
+  color: #FFF;
+}
+
+/*# sourceMappingURL=style.css.map */

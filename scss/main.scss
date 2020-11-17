@@ -1,0 +1,143 @@
+$color-text: #FFF;
+$color-text-2: rgb(255, 196, 0);
+$color-background: rgb(29, 29, 29);
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: $color-background;
+    color: $color-text;
+}
+
+img {
+    object-fit: cover;
+}
+
+.logo {
+    color: $color-text;
+    span {
+        color: $color-text-2;
+    }
+}
+
+.navigation {
+    display: flex;
+    .menu-nav {
+        ul {
+            display: flex;
+            list-style-type: none;
+            li {
+                margin-left: 40px;
+                a {
+                    color: $color-text;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+// header
+header {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    width: 100%;
+    height: 760px;
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.26), black) ;
+    img {
+        z-index: -9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 760px;
+    }
+
+    .contenu-logo {
+        border: 1px solid black;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 20%;
+        align-items: center;
+        .logo__header {
+            display: flex;
+            width: 100%;
+            height: 396px;
+            background: $color-background
+        }
+
+        .reseaux {
+            position: absolute;
+            top: 50px;
+            display: flex;
+            flex-direction: column;
+            i {
+                color: $color-text;
+                margin-top: 30px;
+            }
+        }
+    }
+
+    .navigation__header {
+        display: flex;
+        position: relative;
+        width: 80%;
+        height: 100%;
+        justify-content: space-between;
+        .number-header {
+            color: $color-text;
+            width: 20%;
+            text-align: center;
+        }
+        
+        .menu-nav__header {
+            margin-right: 20%;
+            width: 40%;
+        }
+    }
+    
+    .titre {
+        border: 1px solid black;
+        color: $color-text;
+        position: absolute;
+        margin-right: 20%;
+        left: 0;
+        width: 60%;
+        height: 100%;
+        h1 {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+
+// nav 
+.navigation-principale {
+    width: 100%;
+    height: 1760px;
+    display: flex;
+    flex-wrap: wrap;
+    .projet {
+        position: relative;
+        width: 25%;
+        height: 880px;
+        background: rgba(0, 0, 0, 0.486);
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 880px;
+        }
+
+        h2, i, p {
+            color: $color-text;
+        }
+    }
+}
