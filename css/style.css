@@ -1,9 +1,11 @@
 body {
+  position: relative;
   padding: 0;
   margin: 0;
   width: 100%;
   background: #1d1d1d;
   color: #FFF;
+  font-family: sans-serif;
 }
 
 img {
@@ -14,7 +16,7 @@ img {
   color: #FFF;
 }
 .logo span {
-  color: #ffc400;
+  color: #d6b88b;
 }
 
 .navigation {
@@ -23,9 +25,6 @@ img {
 .navigation .menu-nav ul {
   display: flex;
   list-style-type: none;
-}
-.navigation .menu-nav ul li {
-  margin-left: 40px;
 }
 .navigation .menu-nav ul li a {
   color: #FFF;
@@ -41,6 +40,25 @@ header {
   display: flex;
   background: linear-gradient(rgba(0, 0, 0, 0.26), black);
 }
+header .bordure {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid gray;
+  z-index: 10;
+}
+header .bordure__1 {
+  left: 20%;
+}
+header .bordure__2 {
+  left: 40%;
+}
+header .bordure__3 {
+  left: 60%;
+}
+header .bordure__4 {
+  left: 80%;
+}
 header img {
   z-index: -9;
   position: absolute;
@@ -50,7 +68,6 @@ header img {
   height: 760px;
 }
 header .contenu-logo {
-  border: 1px solid black;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -89,8 +106,10 @@ header .navigation__header .menu-nav__header {
   margin-right: 20%;
   width: 40%;
 }
+header .navigation__header .menu-nav__header ul li {
+  margin-left: 40px;
+}
 header .titre {
-  border: 1px solid black;
   color: #FFF;
   position: absolute;
   margin-right: 20%;
@@ -108,22 +127,329 @@ header .titre h1 {
   height: 1760px;
   display: flex;
   flex-wrap: wrap;
+  overflow: hidden;
+  z-index: 20;
 }
 .navigation-principale .projet {
   position: relative;
   width: 25%;
   height: 880px;
   background: rgba(0, 0, 0, 0.486);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s;
 }
-.navigation-principale .projet img {
+.navigation-principale .projet .image-projet img {
+  overflow: hidden;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 880px;
+  z-index: -5;
 }
-.navigation-principale .projet h2, .navigation-principale .projet i, .navigation-principale .projet p {
+.navigation-principale .projet .titre {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.navigation-principale .projet .titre h2, .navigation-principale .projet .titre i, .navigation-principale .projet .titre p {
+  position: relative;
   color: #FFF;
+}
+.navigation-principale .projet .titre h2, .navigation-principale .projet .titre p {
+  display: flex;
+  margin-left: 60px;
+}
+.navigation-principale .projet .titre h2 {
+  width: 30%;
+  font-size: 24px;
+}
+.navigation-principale .projet .titre i {
+  display: none;
+}
+.navigation-principale .projet .titre p {
+  padding: 0;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: flex-end;
+  writing-mode: vertical-rl;
+  margin-bottom: 60px;
+  font-size: 20px;
+}
+.navigation-principale .projet:hover {
+  background: none;
+}
+.navigation-principale .projet:hover .image-projet img {
+  transition: all 0.4s;
+  transform: scale(1.06);
+}
+.navigation-principale .projet:hover .image-projet img:active {
+  transform: scale(1);
+  transition: 0s;
+}
+.navigation-principale .projet:hover .titre i {
+  transition: 0.3s;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  font-size: 42px;
+  background: rgba(255, 196, 0, 0.651);
+  padding: 30px;
+  border-radius: 50px;
+  z-index: 3;
+  transition: 0.3s;
+}
+.navigation-principale .projet:hover .titre i:hover {
+  transform: scale(1.06);
+}
+.navigation-principale .projet:hover .titre i:active {
+  transform: scale(1);
+  transition: 0s;
+}
+.navigation-principale .projet:hover .titre h2, .navigation-principale .projet:hover .titre p {
+  transition: 0.3s;
+  display: none;
+}
+
+.button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.button .bordure {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid gray;
+  z-index: 10;
+}
+.button .bordure__1 {
+  left: 20%;
+}
+.button .bordure__2 {
+  left: 40%;
+}
+.button .bordure__3 {
+  left: 60%;
+}
+.button .bordure__4 {
+  left: 80%;
+}
+.button button {
+  cursor: pointer;
+  margin-top: 120px;
+  margin-bottom: 0;
+  padding: 15px 20px;
+  border-radius: 25px;
+  color: #FFF;
+  border: none;
+  font-size: 15px;
+  background: #373737;
+  transition: all 0.3s;
+}
+.button button:hover {
+  transform: scale(1.06);
+}
+.button button:active {
+  transform: scale(1);
+  transition: 0s;
+}
+
+section {
+  position: relative;
+}
+section .contacts {
+  width: 60%;
+  height: 100%;
+  padding-top: 116px;
+  margin-left: 20%;
+}
+section .contacts .bordure {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid gray;
+  z-index: 10;
+}
+section .contacts .bordure__1 {
+  left: 20%;
+}
+section .contacts .bordure__2 {
+  left: 40%;
+}
+section .contacts .bordure__3 {
+  left: 60%;
+}
+section .contacts .bordure__4 {
+  left: 80%;
+}
+section .contacts h2 {
+  text-align: center;
+  margin: 0;
+}
+section .contacts h2 span {
+  color: #d6b88b;
+}
+section .contacts .contact {
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+}
+section .contacts .contact .info-contact {
+  width: 20%;
+}
+section .contacts .contact .info-contact p {
+  margin-top: 0;
+  padding-top: 0;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+section .contacts .contact .info-contact p:hover {
+  transform: scale(1.06);
+}
+section .contacts .contact .info-contact p:active {
+  transform: scale(1);
+  transition: 0s;
+}
+section .contacts .contact .info-contact p:hover {
+  color: #d6b88b;
+}
+section .contacts .contact .formulaires {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 80%;
+}
+section .contacts .contact .formulaires .formulaire {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+section .contacts .contact .formulaires .formulaire .colonne {
+  text-align: right;
+}
+section .contacts .contact .formulaires .formulaire .colonne ::placeholder {
+  color: #FFF;
+}
+section .contacts .contact .formulaires .formulaire .colonne input, section .contacts .contact .formulaires .formulaire .colonne .text {
+  border: none;
+  color: #FFF;
+  margin-bottom: 10px;
+  margin-right: 0;
+  margin-left: 0;
+  background: #373737;
+  padding-left: 22px;
+  width: 205px;
+  height: 58px;
+  border-radius: 15px;
+}
+section .contacts .contact .formulaires .formulaire .colonne__2 {
+  margin-left: 10px;
+  margin-left: 10px;
+}
+section .contacts .contact .formulaires .formulaire .colonne__3 .text {
+  margin-left: 10px;
+  padding-top: 22px;
+  height: 106px;
+  width: 350px;
+}
+section .contacts .contact .formulaires .formulaire .colonne__3 button {
+  cursor: pointer;
+  color: #FFF;
+  background: #d6b88b;
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  padding: 15px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+section .contacts .contact .formulaires .formulaire .colonne__3 button:hover {
+  transform: scale(1.06);
+}
+section .contacts .contact .formulaires .formulaire .colonne__3 button:active {
+  transform: scale(1);
+  transition: 0s;
+}
+section .contacts .contact .formulaires .formulaire .colonne__3 button p {
+  margin: 0;
+  padding-right: 20px;
+}
+
+footer {
+  position: relative;
+}
+footer .footer {
+  margin-top: 135px;
+  width: 60%;
+  margin-left: 20%;
+  padding-bottom: 85px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer .bordure {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  border-left: 1px solid gray;
+  z-index: 10;
+}
+footer .footer .bordure__1 {
+  left: 20%;
+}
+footer .footer .bordure__2 {
+  left: 40%;
+}
+footer .footer .bordure__3 {
+  left: 60%;
+}
+footer .footer .bordure__4 {
+  left: 80%;
+}
+footer .footer .logo__footer {
+  width: 33.3%;
+}
+footer .footer .logo__footer h2 {
+  margin: 0;
+  font-size: 38px;
+}
+footer .footer .navigation__footer {
+  width: 33.3%;
+}
+footer .footer .navigation__footer .menu-nav__footer {
+  width: 100%;
+  display: flex;
+}
+footer .footer .navigation__footer .menu-nav__footer ul {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footer .navigation__footer .menu-nav__footer ul li {
+  font-size: 12px;
+}
+footer .footer .copyright {
+  width: 33.3%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+footer .footer .copyright i, footer .footer .copyright p {
+  font-size: 10px;
+  margin: 0;
+}
+footer .footer .copyright i {
+  margin-right: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

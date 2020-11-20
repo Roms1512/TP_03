@@ -1,13 +1,34 @@
 $color-text: #FFF;
-$color-text-2: rgb(255, 196, 0);
+$color-text-2: rgb(214, 184, 139);
 $color-background: rgb(29, 29, 29);
+$border: 1px solid gray;
+
+
+// ------------------------------------------------------------
+
+
+@mixin click {
+    &:hover {
+        transform: scale(1.06);
+    }
+    &:active {
+        transform: scale(1);
+        transition: 0s;
+    }
+}
+
+
+// ------------------------------------------------------------
+
 
 body {
+    position: relative;
     padding: 0;
     margin: 0;
     width: 100%;
     background: $color-background;
     color: $color-text;
+    font-family: sans-serif;
 }
 
 img {
@@ -28,7 +49,6 @@ img {
             display: flex;
             list-style-type: none;
             li {
-                margin-left: 40px;
                 a {
                     color: $color-text;
                     text-decoration: none;
@@ -39,8 +59,33 @@ img {
 }
 
 
+// ------------------------------------------------------------------
+
+
 // header
 header {
+    .bordure {
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        border-left: $border;
+        z-index: 10;
+        &__1 {
+            left: 20%;
+        }
+    
+        &__2 {
+            left: 40%;
+        }
+    
+        &__3 {
+            left: 60%;
+        }
+    
+        &__4 {
+            left: 80%;
+        }
+    }
     height: 100%;
     width: 100%;
     position: relative;
@@ -48,6 +93,7 @@ header {
     height: 760px;
     display: flex;
     background: linear-gradient(rgba(0, 0, 0, 0.26), black) ;
+    // background
     img {
         z-index: -9;
         position: absolute;
@@ -57,13 +103,14 @@ header {
         height: 760px;
     }
 
+    // contenue logo
     .contenu-logo {
-        border: 1px solid black;
         display: flex;
         position: relative;
         flex-direction: column;
         width: 20%;
         align-items: center;
+        // logo header
         .logo__header {
             display: flex;
             width: 100%;
@@ -71,6 +118,7 @@ header {
             background: $color-background
         }
 
+        // reseaux
         .reseaux {
             position: absolute;
             top: 50px;
@@ -98,11 +146,15 @@ header {
         .menu-nav__header {
             margin-right: 20%;
             width: 40%;
+            ul {
+                li {
+                    margin-left: 40px;
+                }
+            }
         }
     }
     
     .titre {
-        border: 1px solid black;
         color: $color-text;
         position: absolute;
         margin-right: 20%;
@@ -117,27 +169,362 @@ header {
 }
 
 
+// --------------------------------------------------------------------
+
+
 // nav 
 .navigation-principale {
     width: 100%;
     height: 1760px;
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
+    z-index: 20;
+    // projets
     .projet {
         position: relative;
         width: 25%;
         height: 880px;
         background: rgba(0, 0, 0, 0.486);
-        img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 880px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: all 0.3s;
+        // images
+        .image-projet {
+            img {
+                overflow: hidden;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 880px;
+                z-index: -5;
+            }
+        }
+        
+        // titre
+        .titre {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            h2, i, p {
+                position: relative;
+                color: $color-text;
+            }
+            
+            h2, p {
+                display: flex;
+                margin-left: 60px;
+            }
+            
+            h2 {
+                width: 30%;
+                font-size: 24px;
+            }
+
+            i {
+                display: none;
+            }
+
+            p {
+                padding: 0;
+                height: 100%;
+                justify-content: flex-end;
+                align-items: flex-end;
+                writing-mode: vertical-rl;
+                margin-bottom: 60px;
+                font-size: 20px;
+            }
+        }  
+
+        &:hover {
+            background: none;
+            .image-projet {
+                img {
+                    transition: all 0.4s;
+                    transform: scale(1.06);
+                    &:active {
+                        transform: scale(1);
+                        transition: 0s;
+                    }
+                }
+            }
+
+            .titre {
+                i {
+                    transition: 0.3s;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    right: 40%;
+                    font-size: 42px;
+                    background: rgba(255, 196, 0, 0.651);
+                    padding: 30px;
+                    border-radius: 50px;
+                    z-index: 3;
+                    transition: 0.3s;
+                    @include click();
+                }
+        
+                h2, p {
+                    transition: 0.3s;
+                    display: none;
+                }
+            }
         }
 
-        h2, i, p {
-            color: $color-text;
+    }
+    
+}
+
+// boutton
+.button {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    .bordure {
+        position: absolute;
+        width: 20%;
+        height: 100%;
+        border-left: $border;
+        z-index: 10;
+        &__1 {
+            left: 20%;
+        }
+        
+        &__2 {
+            left: 40%;
+        }
+        
+        &__3 {
+            left: 60%;
+        }
+        
+        &__4 {
+            left: 80%;
+        }
+    }
+    button {
+        cursor: pointer;
+        margin-top: 120px;
+        margin-bottom: 0;
+        padding: 15px 20px;
+        border-radius: 25px;
+        color: $color-text;
+        border: none;
+        font-size: 15px;
+        background: lighten($color: $color-background, $amount: 10);
+        transition: all 0.3s;
+        @include click();
+    }
+}
+
+
+// ------------------------------------------------------------------------------------------------
+
+
+section {
+    position: relative; 
+    .contacts {
+        width: 60%;
+        height: 100%;
+        padding-top: 116px;
+        margin-left: 20%;
+        .bordure {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            border-left: $border;
+            z-index: 10;
+            &__1 {
+                left: 20%;
+            }
+            
+            &__2 {
+                left: 40%;
+            }
+            
+            &__3 {
+                left: 60%;
+            }
+            
+            &__4 {
+                left: 80%;
+            }
+        }
+        h2 {
+            text-align: center;
+            margin: 0;
+            span {
+                color: $color-text-2;
+            }
+        }
+    
+        .contact {
+            margin-top: 120px;
+            display: flex;
+            justify-content: space-between;
+            z-index: 20;
+            .info-contact {
+                width: 20%;
+                p {
+                    margin-top: 0;
+                    padding-top: 0;
+                    cursor: pointer;
+                    transition: all 0.1s;
+                    @include click();
+                    &:hover {
+                        color: $color-text-2;
+                    }
+                }
+            }
+    
+            .formulaires {
+                border: 1px solid white;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 80%;
+                .formulaire {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    .colonne {  
+                        text-align: right;
+                        ::placeholder {
+                            color: $color-text;
+                        }
+                        
+                        input, .text{
+                            border: none;
+                            color: $color-text;
+                            margin-bottom: 10px;
+                            margin-right: 0;
+                            margin-left: 0;
+                            background: lighten($color: $color-background, $amount: 10);
+                            padding-left: 22px;
+                            width: 205px;
+                            height: 58px;
+                            border-radius: 15px;
+                        }
+    
+                        &__2 {
+                            margin-left: 10px;
+                            margin-left: 10px;
+                        }
+    
+                        &__3 {
+                            .text {
+                                margin-left: 10px;
+                                padding-top: 22px;
+                                height: 106px;
+                                width: 350px;
+                            }
+    
+                            button {
+                                cursor: pointer;
+                                color: $color-text;
+                                background: $color-text-2;
+                                display: flex;
+                                align-self: flex-end;
+                                align-items: center;
+                                padding: 15px 30px;
+                                border-radius: 30px;
+                                font-size: 15px;
+                                transition: all 0.3s;
+                                @include click();
+                                p { 
+                                    margin: 0;
+                                    padding-right: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// ------------------------------------------------------------------------------------------------
+
+
+footer {
+    position: relative;
+    .footer {
+        margin-top: 135px;
+        width: 60%;
+        margin-left: 20%;
+        padding-bottom: 85px;
+        display: flex;
+        justify-content: space-between;
+        .bordure {
+            position: absolute;
+            width: 20%;
+            height: 100%;
+            border-left: $border;
+            z-index: 10;
+            &__1 {
+                left: 20%;
+            }
+            
+            &__2 {
+                left: 40%;
+            }
+            
+            &__3 {
+                left: 60%;
+            }
+            
+            &__4 {
+                left: 80%;
+            }
+        }
+        // logo footer
+        .logo__footer {
+            width: 33.3%;
+            h2 {
+                margin: 0;
+                font-size: 38px;
+            }
+        }
+        
+        .navigation__footer {
+            width: 33.3%;
+            .menu-nav__footer {
+                width: 100%;
+                display: flex;
+                ul {
+                    margin: 0;
+                    width: 100%;
+                    padding: 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    li {
+                        font-size: 12px;
+                    }
+                }
+            }
+            
+        }
+        
+        .copyright {
+            width: 33.3%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            i, p {
+                font-size: 10px;
+                margin: 0;
+            }
+    
+            i {
+                margin-right: 5px;
+            }
         }
     }
 }
