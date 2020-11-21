@@ -1,7 +1,7 @@
 $color-text: #FFF;
 $color-text-2: rgb(214, 184, 139);
 $color-background: rgb(29, 29, 29);
-$border: 1px solid gray;
+$border: 1px solid rgba(128, 128, 128, 0.363);
 
 
 // ------------------------------------------------------------
@@ -64,6 +64,13 @@ img {
 
 // header
 header {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    width: 100%;
+    height: 760px;
+    display: flex;
+    background: linear-gradient(rgba(0, 0, 0, 0.418), black) ;
     .bordure {
         position: absolute;
         width: 20%;
@@ -86,13 +93,6 @@ header {
             left: 80%;
         }
     }
-    height: 100%;
-    width: 100%;
-    position: relative;
-    width: 100%;
-    height: 760px;
-    display: flex;
-    background: linear-gradient(rgba(0, 0, 0, 0.26), black) ;
     // background
     img {
         z-index: -9;
@@ -105,28 +105,43 @@ header {
 
     // contenue logo
     .contenu-logo {
-        display: flex;
         position: relative;
+        display: flex;
         flex-direction: column;
         width: 20%;
-        align-items: center;
+        height: 396px;
         // logo header
         .logo__header {
-            display: flex;
+            text-align: center;
             width: 100%;
             height: 396px;
-            background: $color-background
+            font-size: 22px;
+            background: $color-background;
         }
-
+        
+        
         // reseaux
         .reseaux {
+            z-index: 11;
             position: absolute;
-            top: 50px;
-            display: flex;
-            flex-direction: column;
+            top: 175px;
+            left: 85px;
             i {
-                color: $color-text;
-                margin-top: 30px;
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                margin-top: 45px;
+                color: lighten($color: $color-background, $amount: 30);
+            }
+            
+            // logo transparent
+            .logo-transparent {
+                color: lighten($color: rgba(29, 29, 29, 0.13), $amount: 30) ;
+                font-size: 78px;
+                position: absolute;
+                top: 40px;
+                left: -155px;
+                z-index: 0;
             }
         }
     }
@@ -134,21 +149,36 @@ header {
     .navigation__header {
         display: flex;
         position: relative;
-        width: 80%;
-        height: 100%;
-        justify-content: space-between;
+        width: 60%;
+        height: 30px;
+        margin-right: 20%;
+        z-index: 11;
         .number-header {
             color: $color-text;
-            width: 20%;
+            width: 33.3%;
             text-align: center;
+            cursor: pointer;
+            &:hover {
+                color: $color-text-2;
+            }
         }
         
         .menu-nav__header {
-            margin-right: 20%;
-            width: 40%;
+            width: 66.6%;
+            display: flex;
+            justify-content: flex-end;
             ul {
+                padding: 0;
+                text-align: right;
                 li {
-                    margin-left: 40px;
+                    margin-left: 68px;
+                    cursor: pointer;
+                    @include click();
+                    a {
+                        &:hover {
+                            color: $color-text-2;
+                        }
+                    }
                 }
             }
         }
@@ -158,10 +188,13 @@ header {
         color: $color-text;
         position: absolute;
         margin-right: 20%;
-        left: 0;
+        right: 0;
+        top: 346px;
         width: 60%;
         height: 100%;
+        z-index: 10;
         h1 {
+            font-size: 70px;
             display: flex;
             justify-content: flex-end;
         }
@@ -276,7 +309,6 @@ header {
     }
     
 }
-
 // boutton
 .button {
     position: relative;
@@ -306,7 +338,9 @@ header {
             left: 80%;
         }
     }
+
     button {
+        z-index: 11;
         cursor: pointer;
         margin-top: 120px;
         margin-bottom: 0;
@@ -330,8 +364,8 @@ section {
     .contacts {
         width: 60%;
         height: 100%;
-        padding-top: 116px;
         margin-left: 20%;
+        margin-right: 20%;
         .bordure {
             position: absolute;
             width: 20%;
@@ -354,7 +388,10 @@ section {
                 left: 80%;
             }
         }
+
+        // titre
         h2 {
+            padding-top: 116px;
             text-align: center;
             margin: 0;
             span {
@@ -362,18 +399,20 @@ section {
             }
         }
     
+        // page contacte
         .contact {
             margin-top: 120px;
             display: flex;
             justify-content: space-between;
-            z-index: 20;
+            // paragraphe 1
             .info-contact {
-                width: 20%;
+                width: 33.3%;
+                z-index: 11;
                 p {
                     margin-top: 0;
                     padding-top: 0;
                     cursor: pointer;
-                    transition: all 0.1s;
+                    transition: all 0.2s;
                     @include click();
                     &:hover {
                         color: $color-text-2;
@@ -381,18 +420,16 @@ section {
                 }
             }
     
+            // parragraphe 2
+            // formulaire
             .formulaires {
-                border: 1px solid white;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                width: 80%;
+                z-index: 11;
+                width: min-content;
                 .formulaire {
                     width: 100%;
                     display: flex;
                     justify-content: flex-end;
-                    .colonne {  
-                        text-align: right;
+                    .colonne {
                         ::placeholder {
                             color: $color-text;
                         }
@@ -401,33 +438,32 @@ section {
                             border: none;
                             color: $color-text;
                             margin-bottom: 10px;
-                            margin-right: 0;
-                            margin-left: 0;
                             background: lighten($color: $color-background, $amount: 10);
                             padding-left: 22px;
                             width: 205px;
                             height: 58px;
                             border-radius: 15px;
                         }
-    
-                        &__2 {
-                            margin-left: 10px;
+
+                        &__2, &__3 {
                             margin-left: 10px;
                         }
     
                         &__3 {
+                            display: flex;
+                            flex-direction: column;
                             .text {
-                                margin-left: 10px;
                                 padding-top: 22px;
                                 height: 106px;
                                 width: 350px;
                             }
-    
+                            
                             button {
                                 cursor: pointer;
                                 color: $color-text;
                                 background: $color-text-2;
                                 display: flex;
+                                justify-content: flex-end;
                                 align-self: flex-end;
                                 align-items: center;
                                 padding: 15px 30px;
@@ -455,7 +491,6 @@ section {
 footer {
     position: relative;
     .footer {
-        margin-top: 135px;
         width: 60%;
         margin-left: 20%;
         padding-bottom: 85px;
@@ -485,8 +520,14 @@ footer {
         }
         // logo footer
         .logo__footer {
+            padding-top: 135px;
             width: 33.3%;
+            z-index: 11;
+            
             h2 {
+                cursor: pointer;
+                transition: all 0.3s;
+                @include click();
                 margin: 0;
                 font-size: 38px;
             }
@@ -494,6 +535,8 @@ footer {
         
         .navigation__footer {
             width: 33.3%;
+            z-index: 11;
+            padding-top: 135px;
             .menu-nav__footer {
                 width: 100%;
                 display: flex;
@@ -506,6 +549,11 @@ footer {
                     align-items: center;
                     li {
                         font-size: 12px;
+                        transition: all 0.3s;
+                        @include click();
+                        :hover {
+                            color: $color-text-2;
+                        }
                     }
                 }
             }
@@ -513,6 +561,8 @@ footer {
         }
         
         .copyright {
+            z-index: 11;
+            padding-top: 135px;
             width: 33.3%;
             display: flex;
             align-items: center;

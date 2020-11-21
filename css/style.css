@@ -38,13 +38,13 @@ header {
   width: 100%;
   height: 760px;
   display: flex;
-  background: linear-gradient(rgba(0, 0, 0, 0.26), black);
+  background: linear-gradient(rgba(0, 0, 0, 0.418), black);
 }
 header .bordure {
   position: absolute;
   width: 20%;
   height: 100%;
-  border-left: 1px solid gray;
+  border-left: 1px solid rgba(128, 128, 128, 0.363);
   z-index: 10;
 }
 header .bordure__1 {
@@ -68,56 +68,92 @@ header img {
   height: 760px;
 }
 header .contenu-logo {
-  display: flex;
   position: relative;
+  display: flex;
   flex-direction: column;
   width: 20%;
-  align-items: center;
+  height: 396px;
 }
 header .contenu-logo .logo__header {
-  display: flex;
+  text-align: center;
   width: 100%;
   height: 396px;
+  font-size: 22px;
   background: #1d1d1d;
 }
 header .contenu-logo .reseaux {
+  z-index: 11;
   position: absolute;
-  top: 50px;
-  display: flex;
-  flex-direction: column;
+  top: 175px;
+  left: 85px;
 }
 header .contenu-logo .reseaux i {
-  color: #FFF;
-  margin-top: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  color: #6a6a6a;
+}
+header .contenu-logo .reseaux .logo-transparent {
+  color: rgba(106, 106, 106, 0.13);
+  font-size: 78px;
+  position: absolute;
+  top: 40px;
+  left: -155px;
+  z-index: 0;
 }
 header .navigation__header {
   display: flex;
   position: relative;
-  width: 80%;
-  height: 100%;
-  justify-content: space-between;
+  width: 60%;
+  height: 30px;
+  margin-right: 20%;
+  z-index: 11;
 }
 header .navigation__header .number-header {
   color: #FFF;
-  width: 20%;
+  width: 33.3%;
   text-align: center;
+  cursor: pointer;
+}
+header .navigation__header .number-header:hover {
+  color: #d6b88b;
 }
 header .navigation__header .menu-nav__header {
-  margin-right: 20%;
-  width: 40%;
+  width: 66.6%;
+  display: flex;
+  justify-content: flex-end;
+}
+header .navigation__header .menu-nav__header ul {
+  padding: 0;
+  text-align: right;
 }
 header .navigation__header .menu-nav__header ul li {
-  margin-left: 40px;
+  margin-left: 68px;
+  cursor: pointer;
+}
+header .navigation__header .menu-nav__header ul li:hover {
+  transform: scale(1.06);
+}
+header .navigation__header .menu-nav__header ul li:active {
+  transform: scale(1);
+  transition: 0s;
+}
+header .navigation__header .menu-nav__header ul li a:hover {
+  color: #d6b88b;
 }
 header .titre {
   color: #FFF;
   position: absolute;
   margin-right: 20%;
-  left: 0;
+  right: 0;
+  top: 346px;
   width: 60%;
   height: 100%;
+  z-index: 10;
 }
 header .titre h1 {
+  font-size: 70px;
   display: flex;
   justify-content: flex-end;
 }
@@ -224,7 +260,7 @@ header .titre h1 {
   position: absolute;
   width: 20%;
   height: 100%;
-  border-left: 1px solid gray;
+  border-left: 1px solid rgba(128, 128, 128, 0.363);
   z-index: 10;
 }
 .button .bordure__1 {
@@ -240,6 +276,7 @@ header .titre h1 {
   left: 80%;
 }
 .button button {
+  z-index: 11;
   cursor: pointer;
   margin-top: 120px;
   margin-bottom: 0;
@@ -265,14 +302,14 @@ section {
 section .contacts {
   width: 60%;
   height: 100%;
-  padding-top: 116px;
   margin-left: 20%;
+  margin-right: 20%;
 }
 section .contacts .bordure {
   position: absolute;
   width: 20%;
   height: 100%;
-  border-left: 1px solid gray;
+  border-left: 1px solid rgba(128, 128, 128, 0.363);
   z-index: 10;
 }
 section .contacts .bordure__1 {
@@ -288,6 +325,7 @@ section .contacts .bordure__4 {
   left: 80%;
 }
 section .contacts h2 {
+  padding-top: 116px;
   text-align: center;
   margin: 0;
 }
@@ -298,16 +336,16 @@ section .contacts .contact {
   margin-top: 120px;
   display: flex;
   justify-content: space-between;
-  z-index: 20;
 }
 section .contacts .contact .info-contact {
-  width: 20%;
+  width: 33.3%;
+  z-index: 11;
 }
 section .contacts .contact .info-contact p {
   margin-top: 0;
   padding-top: 0;
   cursor: pointer;
-  transition: all 0.1s;
+  transition: all 0.2s;
 }
 section .contacts .contact .info-contact p:hover {
   transform: scale(1.06);
@@ -320,19 +358,13 @@ section .contacts .contact .info-contact p:hover {
   color: #d6b88b;
 }
 section .contacts .contact .formulaires {
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: 80%;
+  z-index: 11;
+  width: min-content;
 }
 section .contacts .contact .formulaires .formulaire {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-}
-section .contacts .contact .formulaires .formulaire .colonne {
-  text-align: right;
 }
 section .contacts .contact .formulaires .formulaire .colonne ::placeholder {
   color: #FFF;
@@ -341,20 +373,20 @@ section .contacts .contact .formulaires .formulaire .colonne input, section .con
   border: none;
   color: #FFF;
   margin-bottom: 10px;
-  margin-right: 0;
-  margin-left: 0;
   background: #373737;
   padding-left: 22px;
   width: 205px;
   height: 58px;
   border-radius: 15px;
 }
-section .contacts .contact .formulaires .formulaire .colonne__2 {
-  margin-left: 10px;
+section .contacts .contact .formulaires .formulaire .colonne__2, section .contacts .contact .formulaires .formulaire .colonne__3 {
   margin-left: 10px;
 }
+section .contacts .contact .formulaires .formulaire .colonne__3 {
+  display: flex;
+  flex-direction: column;
+}
 section .contacts .contact .formulaires .formulaire .colonne__3 .text {
-  margin-left: 10px;
   padding-top: 22px;
   height: 106px;
   width: 350px;
@@ -364,6 +396,7 @@ section .contacts .contact .formulaires .formulaire .colonne__3 button {
   color: #FFF;
   background: #d6b88b;
   display: flex;
+  justify-content: flex-end;
   align-self: flex-end;
   align-items: center;
   padding: 15px 30px;
@@ -387,7 +420,6 @@ footer {
   position: relative;
 }
 footer .footer {
-  margin-top: 135px;
   width: 60%;
   margin-left: 20%;
   padding-bottom: 85px;
@@ -398,7 +430,7 @@ footer .footer .bordure {
   position: absolute;
   width: 20%;
   height: 100%;
-  border-left: 1px solid gray;
+  border-left: 1px solid rgba(128, 128, 128, 0.363);
   z-index: 10;
 }
 footer .footer .bordure__1 {
@@ -414,14 +446,27 @@ footer .footer .bordure__4 {
   left: 80%;
 }
 footer .footer .logo__footer {
+  padding-top: 135px;
   width: 33.3%;
+  z-index: 11;
 }
 footer .footer .logo__footer h2 {
+  cursor: pointer;
+  transition: all 0.3s;
   margin: 0;
   font-size: 38px;
 }
+footer .footer .logo__footer h2:hover {
+  transform: scale(1.06);
+}
+footer .footer .logo__footer h2:active {
+  transform: scale(1);
+  transition: 0s;
+}
 footer .footer .navigation__footer {
   width: 33.3%;
+  z-index: 11;
+  padding-top: 135px;
 }
 footer .footer .navigation__footer .menu-nav__footer {
   width: 100%;
@@ -437,8 +482,21 @@ footer .footer .navigation__footer .menu-nav__footer ul {
 }
 footer .footer .navigation__footer .menu-nav__footer ul li {
   font-size: 12px;
+  transition: all 0.3s;
+}
+footer .footer .navigation__footer .menu-nav__footer ul li:hover {
+  transform: scale(1.06);
+}
+footer .footer .navigation__footer .menu-nav__footer ul li:active {
+  transform: scale(1);
+  transition: 0s;
+}
+footer .footer .navigation__footer .menu-nav__footer ul li :hover {
+  color: #d6b88b;
 }
 footer .footer .copyright {
+  z-index: 11;
+  padding-top: 135px;
   width: 33.3%;
   display: flex;
   align-items: center;
