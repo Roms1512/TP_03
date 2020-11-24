@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- header -->
-    <header>
+    <header id="acceuil">
         <!-- bordure -->
         <div class="bordure bordure__1"></div>
         <div class="bordure bordure__2"></div>
@@ -41,6 +41,7 @@
                     <p>+7 (212) 674-25-10</p>
                 </div>
                 <div class="menu-nav menu-nav__header">
+                    <i class="fas fa-bars barre"></i>
                     <ul>
                         <li><a href="#">HOME</a></li>
                         <li><a href="#">ABOUT US</a></li>
@@ -216,12 +217,12 @@
                 <div class="formulaires">
                     <form class="formulaire">
                         <div class="colonne colonne__1">
-                            <input type="name" placeholder="Name" required>
-                            <input type="email" placeholder="Email" required>
+                            <input type="name" placeholder="Name" required class="name">
+                            <input type="email" placeholder="Email" required class="mail">
                         </div>
                         <div class="colonne colonne__2">
-                            <input type="tel" placeholder="Phone" required>
-                            <input type="name" placeholder="Company">
+                            <input type="tel" placeholder="Phone" required class="phone">
+                            <input type="name" placeholder="Company" class="company">
                         </div>
                         <div class="colonne colonne__3">
                             <textarea name="message" id="" cols="30" rows="10" class="text" placeholder="Message"></textarea>
@@ -246,7 +247,7 @@
             <div class="bordure bordure__4"></div>
             <!-- logo -->
             <div class="logo logo__footer">
-                <h2>go<span>.</span>arch</h2>
+                <a href="#acceuil"><h2>go<span>.</span>arch</h2></a>
             </div>
             <nav class="navigation navigation__footer">
                 <div class="menu-nav menu-nav__footer">

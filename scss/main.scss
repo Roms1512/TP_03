@@ -1,5 +1,5 @@
 $color-text: #FFF;
-$color-text-2: rgb(214, 184, 139);
+$color-text-2: rgb(204, 174, 142);
 $color-background: rgb(29, 29, 29);
 $border: 1px solid rgba(128, 128, 128, 0.363);
 
@@ -59,6 +59,28 @@ img {
 }
 
 
+.bordure {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    border-left: $border;
+    z-index: 10;
+    &__1 {
+        left: 20%;
+    }
+
+    &__2 {
+        left: 40%;
+    }
+
+    &__3 {
+        left: 60%;
+    }
+
+    &__4 {
+        left: 80%;
+    }
+}
 // ------------------------------------------------------------------
 
 
@@ -71,28 +93,6 @@ header {
     height: 760px;
     display: flex;
     background: linear-gradient(rgba(0, 0, 0, 0.418), black) ;
-    .bordure {
-        position: absolute;
-        width: 20%;
-        height: 100%;
-        border-left: $border;
-        z-index: 10;
-        &__1 {
-            left: 20%;
-        }
-    
-        &__2 {
-            left: 40%;
-        }
-    
-        &__3 {
-            left: 60%;
-        }
-    
-        &__4 {
-            left: 80%;
-        }
-    }
     // background
     img {
         z-index: -9;
@@ -167,6 +167,9 @@ header {
             width: 66.6%;
             display: flex;
             justify-content: flex-end;
+            i {
+                display: none;
+            }
             ul {
                 padding: 0;
                 text-align: right;
@@ -291,7 +294,7 @@ header {
                     top: 50%;
                     right: 40%;
                     font-size: 42px;
-                    background: rgba(255, 196, 0, 0.651);
+                    background: rgba(204, 174, 142, 0.886);
                     padding: 30px;
                     border-radius: 50px;
                     z-index: 3;
@@ -340,6 +343,7 @@ header {
     }
 
     button {
+        display: none;
         z-index: 11;
         cursor: pointer;
         margin-top: 120px;
@@ -361,39 +365,19 @@ header {
 
 section {
     position: relative; 
+    z-index: 13;
     .contacts {
         width: 60%;
         height: 100%;
         margin-left: 20%;
-        margin-right: 20%;
-        .bordure {
-            position: absolute;
-            width: 20%;
-            height: 100%;
-            border-left: $border;
-            z-index: 10;
-            &__1 {
-                left: 20%;
-            }
-            
-            &__2 {
-                left: 40%;
-            }
-            
-            &__3 {
-                left: 60%;
-            }
-            
-            &__4 {
-                left: 80%;
-            }
-        }
-
         // titre
         h2 {
+            width: 100%;
             padding-top: 116px;
-            text-align: center;
-            margin: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 0;
+            padding-bottom: 120px;
             span {
                 color: $color-text-2;
             }
@@ -401,7 +385,6 @@ section {
     
         // page contacte
         .contact {
-            margin-top: 120px;
             display: flex;
             justify-content: space-between;
             // paragraphe 1
@@ -440,6 +423,7 @@ section {
                             margin-bottom: 10px;
                             background: lighten($color: $color-background, $amount: 10);
                             padding-left: 22px;
+                            padding-right: 10px;
                             width: 205px;
                             height: 58px;
                             border-radius: 15px;
@@ -468,6 +452,7 @@ section {
                                 align-items: center;
                                 padding: 15px 30px;
                                 border-radius: 30px;
+                                border: none;
                                 font-size: 15px;
                                 transition: all 0.3s;
                                 @include click();
@@ -496,40 +481,22 @@ footer {
         padding-bottom: 85px;
         display: flex;
         justify-content: space-between;
-        .bordure {
-            position: absolute;
-            width: 20%;
-            height: 100%;
-            border-left: $border;
-            z-index: 10;
-            &__1 {
-                left: 20%;
-            }
-            
-            &__2 {
-                left: 40%;
-            }
-            
-            &__3 {
-                left: 60%;
-            }
-            
-            &__4 {
-                left: 80%;
-            }
-        }
         // logo footer
         .logo__footer {
             padding-top: 135px;
             width: 33.3%;
             z-index: 11;
-            
             h2 {
                 cursor: pointer;
                 transition: all 0.3s;
                 @include click();
                 margin: 0;
                 font-size: 38px;
+                color: $color-text;
+            }
+
+            a {
+                text-decoration: none;
             }
         }
         
@@ -574,6 +541,144 @@ footer {
     
             i {
                 margin-right: 5px;
+            }
+        }
+    }
+}
+
+
+// ------------------------------------------------------------------------------------------------
+
+
+@media screen and (max-width: 1024px) {
+    header {
+        .logo__header {
+            h2 {
+                height: 100px;
+
+            }
+        }
+
+        .navigation__header {
+            .menu-nav__header {
+                i {
+                    display: block;
+                }
+
+                ul {
+                    display: none;
+                }
+            }
+        }
+
+        .titre {
+            h1 {
+                font-size: 30px;
+            }
+        }
+    }
+
+
+    .navigation-principale {
+        height: 1200px;
+        flex-wrap: wrap;
+        .projet {
+            width: 33.3%;
+            height: 600px;
+            .image-projet {
+                img {
+                    height: 600px;
+                }
+            }
+        }
+    }
+
+    .button {
+        button {
+            display: block
+        }
+    }
+
+    section {
+        .contacts {
+            width: 100%;
+            margin-left: 0;
+            .contact {
+                margin: auto;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                .info-contact {
+                    width: 40%;
+                } 
+                
+                .formulaires {
+                    .formulaire {
+                        flex-direction: column;
+                        align-items: center;
+                        .colonne {
+                            display: flex;
+                            margin-left: 0;
+                            text-align: center;
+                            .mail, .company {
+                                margin-left: 10px;
+                            }
+
+                            &__3 {
+                                textarea {
+                                    margin: auto;
+                                }
+
+                                button {
+                                    margin: auto;
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+
+    footer {
+        .footer {
+            .navigation__footer {
+                display: none;
+            }
+
+            .copyright {
+                width: 66.6%;
+            }
+        }
+    }
+}
+
+
+// ------------------------------------------------------------------------------------------------
+
+
+@media screen and (max-width: 680px) {
+    .navigation-principale {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 1800px;
+        .projet {
+            width: 100%;
+        }
+    }
+
+    section {
+        .contacts {
+            .formulaires {
+                .formulaire {
+                    margin: auto;
+                    .colonne {
+                        width: 80%;
+                    }
+                }
             }
         }
     }
