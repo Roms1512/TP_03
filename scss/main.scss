@@ -171,6 +171,7 @@ header {
                 display: none;
             }
             ul {
+                flex-wrap: wrap;
                 padding: 0;
                 text-align: right;
                 li {
@@ -194,7 +195,6 @@ header {
         right: 0;
         top: 346px;
         width: 60%;
-        height: 100%;
         z-index: 10;
         h1 {
             font-size: 70px;
@@ -254,8 +254,8 @@ header {
             }
             
             h2 {
-                width: 30%;
-                font-size: 24px;
+                width: 35%;
+                font-size: 23px;
             }
 
             i {
@@ -542,6 +542,10 @@ footer {
             i {
                 margin-right: 5px;
             }
+
+            br {
+                display: none;
+            }
         }
     }
 }
@@ -560,11 +564,32 @@ footer {
         }
 
         .navigation__header {
+            position: relative;
             .menu-nav__header {
                 i {
+                    position: absolute;
+                    top: 15px;
+                    right: 0;
                     display: block;
+                    cursor: pointer;
+                    font-size: 30px;
                 }
 
+                &:hover {
+                    transition: all 0.3s;
+                    color: $color-text-2;
+                    height: 190px;
+                    i {
+                        display: none;
+                    }
+                    ul {
+                        display: block;
+                        li {
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+                
                 ul {
                     display: none;
                 }
@@ -590,12 +615,29 @@ footer {
                     height: 600px;
                 }
             }
+
+            .titre {
+                h2 {
+                    font-size: 18px;
+                }
+
+                i, p {
+                    font-size: 15px;
+                }
+
+                p {
+                    height: 126px;
+                    position: absolute;
+                    top: 450px;
+                }
+            }
         }
     }
 
     .button {
         button {
-            display: block
+            display: block;
+            font-size: 12px;
         }
     }
 
@@ -611,6 +653,9 @@ footer {
                 flex-direction: column;
                 .info-contact {
                     width: 40%;
+                    p {
+                        font-size: 12px;
+                    }
                 } 
                 
                 .formulaires {
@@ -621,10 +666,14 @@ footer {
                             display: flex;
                             margin-left: 0;
                             text-align: center;
+                            input, .text {
+                                font-size: 12px;
+                            }
+
                             .mail, .company {
                                 margin-left: 10px;
                             }
-
+                            
                             &__3 {
                                 textarea {
                                     margin: auto;
@@ -632,6 +681,7 @@ footer {
 
                                 button {
                                     margin: auto;
+                                    font-size: 12px;
                                 }
                             }
                         }
@@ -650,6 +700,9 @@ footer {
 
             .copyright {
                 width: 66.6%;
+                br {
+                    display: none;
+                }
             }
         }
     }
@@ -672,12 +725,26 @@ footer {
 
     section {
         .contacts {
+            h2 {
+                z-index: 110;
+            }
+
             .formulaires {
                 .formulaire {
                     margin: auto;
                     .colonne {
                         width: 80%;
                     }
+                }
+            }
+        }
+    }
+
+    footer {
+        .footer {
+            .copyright {
+                br {
+                    display: block;
                 }
             }
         }
