@@ -82,6 +82,9 @@ header .contenu-logo .logo__header {
   font-size: 22px;
   background: #1d1d1d;
 }
+header .contenu-logo .logo__header h2 {
+  cursor: pointer;
+}
 header .contenu-logo .reseaux {
   z-index: 11;
   position: absolute;
@@ -102,6 +105,9 @@ header .contenu-logo .reseaux .logo-transparent {
   top: 40px;
   left: -155px;
   z-index: 0;
+}
+header .contenu-logo .reseaux .logo-transparent h2 {
+  width: 70%;
 }
 header .navigation__header {
   display: flex;
@@ -130,11 +136,11 @@ header .navigation__header .menu-nav__header i {
 }
 header .navigation__header .menu-nav__header ul {
   flex-wrap: wrap;
-  padding: 0;
   text-align: right;
 }
 header .navigation__header .menu-nav__header ul li {
-  margin-left: 68px;
+  margin-left: 62px;
+  padding-bottom: 20px;
   cursor: pointer;
 }
 header .navigation__header .menu-nav__header ul li:hover {
@@ -377,8 +383,8 @@ section .contacts .contact .formulaires .formulaire .colonne__3 {
 }
 section .contacts .contact .formulaires .formulaire .colonne__3 .text {
   padding-top: 22px;
+  padding-right: 110px;
   height: 106px;
-  width: 350px;
 }
 section .contacts .contact .formulaires .formulaire .colonne__3 button {
   cursor: pointer;
@@ -506,7 +512,7 @@ footer .footer .copyright br {
   header .navigation__header .menu-nav__header:hover {
     transition: all 0.3s;
     color: #ccae8e;
-    height: 190px;
+    height: 250px;
   }
   header .navigation__header .menu-nav__header:hover i {
     display: none;
@@ -618,13 +624,26 @@ footer .footer .copyright br {
   }
   section .contacts .formulaires .formulaire {
     margin: auto;
+    width: auto;
   }
   section .contacts .formulaires .formulaire .colonne {
-    width: 80%;
+    width: 70%;
+  }
+  section .contacts .formulaires .formulaire .colonne__3 {
+    margin: 0;
   }
 
-  footer .footer .copyright br {
-    display: block;
+  footer .footer {
+    flex-direction: column;
+  }
+  footer .footer .logo__footer {
+    padding-top: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  footer .footer .copyright {
+    padding-top: 20px;
+    padding-left: 35px;
   }
 }
 
